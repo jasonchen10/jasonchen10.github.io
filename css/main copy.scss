@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz@6..12&family=Roboto&display=swap');
+body {
+    background: linear-gradient(180deg, rgba(36, 0, 255, 0.55) 0%, rgba(255, 0, 184, 0.09) 100%);
+    margin: 0;
+    font-family: 'Nunito';
+}
+
+.navbar1{
+    .container{
+        .logo{
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 2em;
+            font-family:"Roboto";
+            color: #FFFFFF
+        }
+        padding: 1em;
+        display:flex;
+        place-content:space-between;
+
+        .mobile-menu{
+            cursor:pointer;
+        }
+    }
+
+    nav{
+        display:none;
+    }
+}
+
+a {
+    color: #444444;
+}
+
+ul {
+    list-style-type: none;
+    padding:0;
+    margin:0;
+}
+
+section {
+    padding:0.5em 2em;
+    
+}
+
+
+.left-col{
+    text-align: left;
+    color: #0C156CBD;
+    font-size: 2em;
+    font-weight: 600;
+    word-wrap: break-word;
+    span{
+        text-align: left;
+        color: white;
+        font-size: 1em;
+    }
+}
+
+.right-col-mobile{
+    font-family: "Nunito";
+    text-align:center;
+    color:white;
+    font-size:0.8em;
+    font-weight: 700;
+    padding-bottom: 1em;
+}
+
+.right-col{
+    text-align: center;
+    .subhead-desktop{
+        display:none;
+    }
+
+    .fields {
+    .submitFields{
+        background-color: #979BFC;
+        color:rgba(255, 255, 255, 0.801);
+        border:1px solid #979BFC;
+        border-style:hidden;
+        border-radius: 6px;
+        box-sizing: border-box;
+        padding: 1em 4em 1em 4em;
+    }
+    .submitForm {
+        font-family: "Roboto";
+        font-weight: bold;
+        background-color: #979BFC;
+        color:white;
+        background: #010675;
+        border-style:hidden;
+        box-sizing: border-box;
+        padding: 1em 5.2em 1em 5.2em;
+        margin:1em;
+
+    }
+}
+
+}
+
+.right-col-desktop{
+    display:none;
+}
+
+
+
+iframe {
+    width:100%;
+    height: 300px;
+}

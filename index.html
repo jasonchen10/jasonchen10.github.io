@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frenly</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="navbar1">
+        <div class="container">
+            <a class="logo" href="#">FRENLY</a>
+
+            <img id="mobile-cta" class="mobile-menu" src="images/menu.svg" alt="Open Navigation">
+
+        </div>
+
+
+        <nav>
+            <img id="mobile-exit" class="mobile-menu-exit" src="images/exit.svg" alt="Close Navigation">
+            <ul class="primary-nav">
+                <li id="infoButton" class="button"><a href="#">INFO</a></li>
+                <li class="buttonBlur"><a href="#">FIND TALENT</a></li>
+                <li class="buttonBlur"><a href="#">POST A JOB</a></li>
+                <li class="buttonBlur"><a href="#">BLOG</a></li>
+            </ul>
+        </nav>        
+
+    </div>
+
+    <section class="main">
+        <div id="description" class="tableobject">
+            Create your own pathway. <span>We connect UNI students and local bussiness together.</span>
+        </div>
+
+        <div id="subscribe" class="tableobject">
+            <div class="right-col-mobile">
+                JOIN OUR THRIVING SHORT TERM HIRE PLATFORM AND SECURE YOUR PATH WAY TO SUCCESS
+            </div>
+
+            <div class="right-col">
+                
+                <article class="grid">
+                    <p class="subhead-desktop">
+                        Make sure to enter in your email now to get notified for our launch day!
+    
+                    </p>
+                    <form action="" class="fields">
+                        <input type="email" class="email" id="email" name="email", placeholder="example@example.com">
+                        <input type="submit" class="submitForm" value="Join our waitlist" style="text-align:center">
+                    </form>
+                </article>
+                
+            </div>
+
+            <div class="right-col-desktop">
+                JOIN OUR THRIVING SHORT TERM HIRE PLATFORM AND SECURE YOUR PATH WAY TO SUCCESS
+            </div>
+        </div>
+
+    </section>
+
+    <section class="launchingSoon">
+        <div>
+            <img id="recruitment" class="recruitmentImage" src="images/recruitment.svg" alt="recruitmentIcon">
+        </div>
+        <div class="centre-col">
+            launching soon..
+        </div>
+        <div>
+            <img id="services" class="services" src="images/services.svg" alt="servicesIcon">
+        </div>
+    </section>
+
+    <section class="info", id="info">
+        <h2>WHAT IS <span>FRENLY</span></h2>
+        <div class="infoDescription">
+            <p class="infoDescription1">At Frenly, we're on a mission to shape the future of work in New Zealand and Australia. Our marketplace platform bridges the gap between university students and local businesses, with a vision to become the premier early-stage career community in the region.</p>
+            <p class="infoDescription2">Our primary focus is on supporting New Zealand students in securing short-term, field-related opportunities that provide invaluable real-world experience. We believe this experience is the key to unlocking doors to promising career paths, ensuring students land great jobs and excel in their chosen fields. Join us on this transformative journey to empower the future workforce!</p>
+        </div>
+    </section>
+
+
+
+
+
+    
+
+    <footer class="footer">
+
+        <ul class="socialLinks">
+            <a href="https://twitter.com/example"><img id="twitter" class="twitter" src="images/iconTwitter.svg" alt="iconTwitter"></a>
+            <a href="https://instagram.com/example"><img id="instagram" class="instagram" src="images/iconInstagram.svg" alt="iconInstagram"></a>
+            <a href="https://linkedin.com/example"><img id="lnkedin" class="lnkedin" src="images/iconLinkedin.svg" alt="iconLinkedin"></a>
+        </ul>            
+
+
+        <ul class="policyLinks">
+            <li><a>© 2022 All rights reserved</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+        </ul>            
+
+    </footer>
+
+    <script>
+
+const mobileBtn = document.getElementById('mobile-cta')
+              nav = document.querySelector('nav')
+              mobileBtnExit = document.getElementById('mobile-exit');
+              infoButton = document.getElementById('infoButton')
+                infoLocation = document.getElementById('info')
+        mobileBtn.addEventListener('click', () => {
+            nav.classList.add('menu-btn');
+        })
+
+        mobileBtnExit.addEventListener('click', () => {
+            nav.classList.remove('menu-btn');
+        })
+        
+        infoButton.addEventListener('click', () => {
+            nav.classList.remove('menu-btn');
+            const y = infoLocation.getBoundingClientRect().top + window.scrollY;
+            window.scroll({
+            top: y,
+            behavior: 'smooth'
+            });
+        })
+
+    </script>
+</body>
+</html>
