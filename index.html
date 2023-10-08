@@ -45,9 +45,13 @@
                         Make sure to enter in your email now to get notified for our launch day!
     
                     </p>
-                    <form action="" class="fields">
-                        <input type="email" class="email" id="email" name="email", placeholder="example@example.com">
-                        <input type="submit" class="submitForm" value="Join our waitlist" style="text-align:center">
+                    <form onsubmit="return false;" class="fields">
+                        
+
+                        <input type="email" class="email" id="email" name="email" placeholder="example@example.com" value="">
+
+
+                        <button type="button" class="submitForm" style="text-align:center" id="defaultButton">Join our waitlist</button>
                     </form>
                 </article>
                 
@@ -72,60 +76,83 @@
         </div>
     </section>
 
-    <section class="info", id="info">
-        <h2>WHAT IS <span>FRENLY</span></h2>
-        <div class="infoDescription">
-            <p class="infoDescription1">At Frenly, we're on a mission to shape the future of work in New Zealand and Australia. Our marketplace platform bridges the gap between university students and local businesses, with a vision to become the premier early-stage career community in the region.</p>
-            <p class="infoDescription2">Our primary focus is on supporting New Zealand students in securing short-term, field-related opportunities that provide invaluable real-world experience. We believe this experience is the key to unlocking doors to promising career paths, ensuring students land great jobs and excel in their chosen fields. Join us on this transformative journey to empower the future workforce!</p>
-        </div>
-    </section>
+
+    <div class="fku">
+
+        <section class="info", id="info">
+            <h2>WHAT IS <span>FRENLY</span></h2>
+            <div class="infoDescription">
+                <p class="infoDescription1">At Frenly, we're on a mission to shape the future of work in New Zealand and Australia. Our marketplace platform bridges the gap between university students and local businesses, with a vision to become the premier early-stage career community in the region.</p>
+                <p class="infoDescription2">Our primary focus is on supporting New Zealand students in securing short-term, field-related opportunities that provide invaluable real-world experience. We believe this experience is the key to unlocking doors to promising career paths, ensuring students land great jobs and excel in their chosen fields. Join us on this transformative journey to empower the future workforce!</p>
+            </div>
+        </section>
+
+        <footer class="footer", id="footer">
+
+            <ul class="socialLinks">
+                <a href="https://twitter.com/example"><img id="twitter" class="twitter" src="images/iconTwitter.svg" alt="iconTwitter"></a>
+                <a href="https://instagram.com/example"><img id="instagram" class="instagram" src="images/iconInstagram.svg" alt="iconInstagram"></a>
+                <a href="https://linkedin.com/example"><img id="lnkedin" class="lnkedin" src="images/iconLinkedin.svg" alt="iconLinkedin"></a>
+            </ul>            
 
 
+            <ul class="policyLinks">
+                <li><a>© 2022 All rights reserved</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+            </ul>            
 
-
-
-    
-
-    <footer class="footer">
-
-        <ul class="socialLinks">
-            <a href="https://twitter.com/example"><img id="twitter" class="twitter" src="images/iconTwitter.svg" alt="iconTwitter"></a>
-            <a href="https://instagram.com/example"><img id="instagram" class="instagram" src="images/iconInstagram.svg" alt="iconInstagram"></a>
-            <a href="https://linkedin.com/example"><img id="lnkedin" class="lnkedin" src="images/iconLinkedin.svg" alt="iconLinkedin"></a>
-        </ul>            
-
-
-        <ul class="policyLinks">
-            <li><a>© 2022 All rights reserved</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms of Service</a></li>
-        </ul>            
-
-    </footer>
-
+        </footer>
+    </div>
     <script>
 
 const mobileBtn = document.getElementById('mobile-cta')
-              nav = document.querySelector('nav')
-              mobileBtnExit = document.getElementById('mobile-exit');
-              infoButton = document.getElementById('infoButton')
-                infoLocation = document.getElementById('info')
-        mobileBtn.addEventListener('click', () => {
-            nav.classList.add('menu-btn');
-        })
+nav = document.querySelector('nav')
+mobileBtnExit = document.getElementById('mobile-exit');
+infoButton = document.getElementById('infoButton')
+infoLocation = document.getElementById('info')
+mobileBtn.addEventListener('click', () => {
+    nav.classList.add('menu-btn');
+})
 
-        mobileBtnExit.addEventListener('click', () => {
-            nav.classList.remove('menu-btn');
-        })
-        
-        infoButton.addEventListener('click', () => {
-            nav.classList.remove('menu-btn');
-            const y = infoLocation.getBoundingClientRect().top + window.scrollY;
-            window.scroll({
-            top: y,
-            behavior: 'smooth'
-            });
-        })
+mobileBtnExit.addEventListener('click', () => {
+    nav.classList.remove('menu-btn');
+})
+
+infoButton.addEventListener('click', () => {
+    nav.classList.remove('menu-btn');
+    const y = infoLocation.getBoundingClientRect().top + window.scrollY;
+    window.scroll({
+        top: y,
+        behavior: 'smooth'
+    });
+})
+
+const defaultButton = document.getElementById("defaultButton")
+
+defaultButton.addEventListener('click', () => {
+    defaultButton.innerHTML = "Entering..."
+    var email = document.getElementById("email").value
+    endpoint = "https://docs.google.com/forms/d/e/1FAIpQLSdhQOTjSeL8B7tk9YEOg2yXqTR1a90gpsOJK4u9v9Covnnoag/formResponse?submit=Submit&usp=pp_url&entry.1915012440=" + email + "&entry.1931232580=student"
+    if (email.match(
+            /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+
+        )) {
+        fetch(endpoint, {
+            "body": null,
+            "method": "GET",
+            "mode": "no-cors",
+            "credentials": "omit"
+        });
+
+        defaultButton.innerHTML = "Thanks for Entering!"
+    } else {
+        defaultButton.innerHTML = "Invalid Email"
+    }
+})
+
+            
+            
 
     </script>
 </body>
